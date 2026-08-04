@@ -1,20 +1,20 @@
 package com.knoldus.ebfts.service;
 
 import com.knoldus.ebfts.model.Employee;
-import com.knoldus.ebfts.model.Registration;
+import com.knoldus.ebfts.model.EmployeeRegistration;
 import org.junit.jupiter.api.Test;
 
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class RegistrationServiceTest {
+class EmployeeRegistrationServiceTest {
 
     @Test
     public void givenEmployeeAsNullShouldReturnEmpty() {
         RegistrationService sut = new RegistrationService();
-        Optional<Registration> actualResult = sut.register(null);
-        Optional<Registration> expectedResult = Optional.empty();
+        Optional<EmployeeRegistration> actualResult = sut.register(null);
+        Optional<EmployeeRegistration> expectedResult = Optional.empty();
         assertEquals(expectedResult, actualResult);
     }
 
@@ -23,11 +23,11 @@ class RegistrationServiceTest {
         String testId = "Test";
         RegistrationService sut = new RegistrationService();
         Employee validEmployee = new Employee();
-        Registration registration = new Registration();
-        registration.setEmployeeId(testId);
+        EmployeeRegistration employeeRegistration = new EmployeeRegistration();
+        employeeRegistration.setEmployeeId(testId);
         validEmployee.setId(testId);
-        Optional<Registration> actualResult = sut.register(validEmployee);
-        Optional<Registration> expectedResult = Optional.of(registration);
+        Optional<EmployeeRegistration> actualResult = sut.register(validEmployee);
+        Optional<EmployeeRegistration> expectedResult = Optional.of(employeeRegistration);
         assertEquals(expectedResult.get().getEmployeeId(), testId);
     }
 

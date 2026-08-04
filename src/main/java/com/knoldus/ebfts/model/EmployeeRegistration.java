@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.UUID;
 
 
-public class Registration {
+public class EmployeeRegistration {
     @JsonProperty("id")
     private UUID id;
     @JsonProperty("employeeId")

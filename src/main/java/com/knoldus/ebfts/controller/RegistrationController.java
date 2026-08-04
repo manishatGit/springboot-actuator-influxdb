@@ -1,10 +1,9 @@
 package com.knoldus.ebfts.controller;
 
 import com.knoldus.ebfts.model.Employee;
-import com.knoldus.ebfts.model.Registration;
+import com.knoldus.ebfts.model.EmployeeRegistration;
 import com.knoldus.ebfts.service.RegistrationService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,7 +18,7 @@ public class RegistrationController {
     RegistrationService registrationService;
 
     @PostMapping("/register")
-    public Optional<Registration> register(@RequestBody Employee requestBody) {
+    public Optional<EmployeeRegistration> register(@RequestBody Employee requestBody) {
         increaseCount(requestBody.getId(), "register");
       return registrationService.register(requestBody);
     }
