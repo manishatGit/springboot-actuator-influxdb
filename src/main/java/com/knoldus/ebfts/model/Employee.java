@@ -6,6 +6,9 @@ public class Employee {
     @JsonProperty("id")
     private String id;
 
+    @JsonProperty("joiningDate")
+    private String joiningDate;
+
     @JsonProperty("name")
     private String name;
 
@@ -22,5 +25,12 @@ public class Employee {
 
     public String getName() {
         return name;
+    }
+
+    public Integer workedYears() {
+        String[] dateParts = joiningDate.split("-");
+        int joiningYear = Integer.parseInt(dateParts[0]);
+        int currentYear = java.time.LocalDate.now().getYear();
+        return currentYear - joiningYear;
     }
 }
