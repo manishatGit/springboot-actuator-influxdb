@@ -33,4 +33,14 @@ public class Employee {
         int currentYear = java.time.LocalDate.now().getYear();
         return currentYear - joiningYear;
     }
+
+    /**
+     * Calculates the gratuity based on the number of worked years.
+     * Gratuity is calculated as 1000 units for each year worked.
+     *
+     * @return the calculated gratuity amount
+     */
+    public Integer calculateGratuity() {
+        return workedYears() * 1000;
+    }
 }
