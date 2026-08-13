@@ -45,10 +45,11 @@ public class Employee {
     }
 
     /**
-     * Calculates the gratuity based on the number of worked years.
-     * Gratuity is calculated as 1000 units for each year worked.
+     * Calculates the salary based on the number of worked years.
+     * Gratuity is calculated as 1000 units for each year worked
+     * Salary is calculated as 15000 units for each year worked.
      *
-     * @return the calculated gratuity amount
+     * @return the calculated salary amount
      */
     public Integer calculateSalary() {
         return workedYears() * 15000;
